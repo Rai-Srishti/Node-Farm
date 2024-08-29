@@ -53,8 +53,8 @@ const server = http.createServer((req, res) => {
         const output = replaceTemplate(tempProduct, product)
         res.end(output)
     */
-    const name = dataObj.findIndex((el) => el.slug === query.name);
-    const product = dataObj[name];
+    const index = dataObj.findIndex((el) => el.slug === query.name);
+    const product = dataObj[index];
     const output = replaceTemplate(tempProduct, product);
     res.end(output);
   }
