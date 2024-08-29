@@ -22,7 +22,7 @@ const tempProduct = fs.readFileSync(
   'utf-8'
 );
 
-const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, 'utf-8');
+const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, 'utf-8'); // 'data' is a string that looks like JSON object //When you read data from a file using fs.readFileSync(), it reads the content as a string, regardless of whether the content represents text, JSON, or something else.
 const dataObj = JSON.parse(data); //dataObj is an array form of data. it is an array of objects
 
 const slugs = dataObj.map((el) => slugify(el.productName, { lower: true })); //slugs will be an array of slug strings corresponding to each product.
